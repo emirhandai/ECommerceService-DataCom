@@ -1,0 +1,15 @@
+﻿  ECommerceClient.c
+C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(27,19): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(28,23): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(29,19): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(30,23): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(31,23): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(142,21): warning C4477: 'scanf_s' : '%s' biçim dizesi 'unsigned int' türü bir bağımsız değişken gerektirir, ancak 2 değişen sayıda bağımsız değişkenin türü 'size_t'
+      C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(142,21):
+      bu bağımsız değişken arabellek boyutu olarak kullanılıyor
+  
+C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(148,21): warning C4477: 'scanf_s' : '%s' biçim dizesi 'unsigned int' türü bir bağımsız değişken gerektirir, ancak 2 değişen sayıda bağımsız değişkenin türü 'size_t'
+      C:\Users\emirh\source\repos\ECommerceClient\ECommerceClient\ECommerceClient.c(148,21):
+      bu bağımsız değişken arabellek boyutu olarak kullanılıyor
+  
+  ECommerceClient.vcxproj -> C:\Users\emirh\source\repos\ECommerceClient\x64\Debug\ECommerceClient.exe

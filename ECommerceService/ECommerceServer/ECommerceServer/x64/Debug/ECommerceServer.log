@@ -1,0 +1,8 @@
+﻿  ECommerceServer.c
+C:\Users\emirh\source\repos\ECommerceServer\ECommerceServer\ECommerceServer.c(22,19): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceServer\ECommerceServer\ECommerceServer.c(23,23): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceServer\ECommerceServer\ECommerceServer.c(24,19): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceServer\ECommerceServer\ECommerceServer.c(25,23): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceServer\ECommerceServer\ECommerceServer.c(26,23): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\emirh\source\repos\ECommerceServer\ECommerceServer\ECommerceServer.c(40,37): warning C4267: 'işlev': 'size_t' - 'int' dönüşümü; veri kaybı olabilir
+  ECommerceServer.vcxproj -> C:\Users\emirh\source\repos\ECommerceServer\x64\Debug\ECommerceServer.exe
