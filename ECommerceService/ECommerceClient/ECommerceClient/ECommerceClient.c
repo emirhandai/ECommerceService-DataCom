@@ -101,6 +101,8 @@ void handle_order() {
     printf("%s\n", order_message);  // Sipariş mesajını ekrana yazdır
     // Sunucuya gönderme işlemi yapılabilir
     printf("Order processed successfully.\n");
+    cart_size = 0;
+    printf("Cart has been cleared after payment.\n");
 }
 
 void print_menu() {
