@@ -1,0 +1,60 @@
+# Özellikler
+#
+# Kaynak: ECommerceServer.c / ECommerceClient.c kaynak kodu ve
+# .context/01-mimari.md + .context/07-tuzaklar.md okunarak doğrulanmıştır.
+
+ozellikler:
+  - ad: tcp-soket-sunucusu
+    aciklama: >
+      Winsock2 tabanlı, PORT 8080'de INADDR_ANY üzerinde dinleyen çok
+      iş parçacıklı TCP sunucusu. main() WSAStartup -> socket -> bind ->
+      listen(backlog=MAX_CLIENTS=10) -> sonsuz accept() döngüsü çalıştırır;
+      her kabul edilen bağlantı için senkronizasyon/mutex olmadan
+      _beginthread(handle_client, ...) ile yeni bir iş parçacığı başlatılır.
+    dosyalar:
+      - ECommerceService/ECommerceServer/ECommerceServer/ECommerceServer.c
+
+  - ad: sunucu-urun-listesi-gonderimi
+    aciklama: >
+      handle_client() bağlanan her istemciye sabit bir karşılama mesajı,
+      ardından statik products[] dizisindeki 5 ürünü satır satır send()
+      ile gönderir; sonrasında sonsuz bir recv() döngüsünde gelen her
+      mesajı konsola yazdırıp ("Received order: %s\n") sabit bir onay
+      metniyle cevap verir. Gerçek bir sipariş/sepet mantığı yoktur.
+    dosyalar:
+      - ECommerceService/ECommerceServer/ECommerceServer/ECommerceServer.c
+
+  - ad: istemci-urun-menusu
+    aciklama: >
+      ECommerceClient konsol menüsü; display_products() sunucudan bağımsız,
+      client içinde ayrıca tanımlı sabit products[] dizisindeki 5 ürünü
+      listeler (sunucudakiyle elle kopyalanmış aynı veriler, tek kaynak yok).
+    dosyalar:
+      - ECommerceService/ECommerceClient/ECommerceClient/ECommerceClient.c
+
+  - ad: istemci-sepet-yonetimi
+    aciklama: >
+      add_to_cart(), remove_from_cart() ve view_cart() fonksiyonları ile
+      süreç-içi, kalıcı olmayan CartItem cart[MAX_CART_ITEMS=10] dizisi
+      üzerinde sepete ekleme, sepetten çıkarma ve sepeti görüntüleme.
+    dosyalar:
+      - ECommerceService/ECommerceClient/ECommerceClient/ECommerceClient.c
+
+  - ad: istemci-siparis-tamamlama
+    aciklama: >
+      handle_order() sepet içeriğini tek bir metne birleştirip konsola
+      yazdırır ve cart_size = 0 ile sepeti temizler. Kod içindeki
+      "Sunucuya gönderme işlemi yapılabilir" yorumuna rağmen hiçbir
+      soket/ağ çağrısı yapılmaz (bkz. .context/07-tuzaklar.md madde 1).
+    dosyalar:
+      - ECommerceService/ECommerceClient/ECommerceClient/ECommerceClient.c
+
+  - ad: kullanilmayan-sql-semasi
+    aciklama: >
+      ECommerceServer dizininde users/products/cart tablolarını tanımlayan
+      a.sql dosyası bulunur, ancak ne ECommerceServer.c ne de
+      ECommerceClient.c içinde sqlite veya fopen ile bu dosyaya referans
+      verilir; kalıcı depolama şeması koda bağlanmamış, kullanılmayan bir
+      taslaktır.
+    dosyalar:
+      - ECommerceService/ECommerceServer/ECommerceServer/a.sql
